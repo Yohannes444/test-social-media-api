@@ -1,0 +1,102 @@
+[2025-06-10T20:17:11.266Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:22:26.555Z] ERROR: GraphQL Error: Syntax Error: Expected Name, found String "query".
+[2025-06-10T20:22:59.005Z] ERROR: GraphQL Error: 
+Invalid `prisma.user.findUnique()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:47:38
+
+  44   return { token, user };
+  45 },
+  46 login: async (_: any, { email, password }: any, { prisma }: Context) => {
+→ 47   const user = await prisma.user.findUnique(
+Can't reach database server at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`
+
+Please make sure your database server is running at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`.
+[2025-06-10T20:26:28.602Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:28:06.885Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:29:18.531Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:32:28.932Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:33:16.079Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:35:08.910Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T20:35:17.117Z] INFO: User logged in: alice
+[2025-06-10T20:38:53.598Z] INFO: User signed up: testuser
+[2025-06-10T20:41:58.670Z] ERROR: GraphQL Error: Not authenticated
+[2025-06-10T20:42:31.461Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.create()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:57:38
+
+  54 },
+  55 createPost: async (_: any, { mediaFile, caption }: any, { prisma, user }: Context) => {
+  56   if (!user) throw new Error('Not authenticated');
+→ 57   const post = await prisma.post.create(
+Can't reach database server at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`
+
+Please make sure your database server is running at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`.
+[2025-06-10T20:42:50.955Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.create()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:57:38
+
+  54 },
+  55 createPost: async (_: any, { mediaFile, caption }: any, { prisma, user }: Context) => {
+  56   if (!user) throw new Error('Not authenticated');
+→ 57   const post = await prisma.post.create(
+Can't reach database server at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`
+
+Please make sure your database server is running at `ep-young-tree-a8oui7gb-pooler.eastus2.azure.neon.tech:5432`.
+[2025-06-10T20:50:37.842Z] INFO: Post created by 15a8394d-3c86-4690-8e8b-4bb928c74abe
+[2025-06-10T20:51:46.523Z] ERROR: GraphQL Error: Cannot return null for non-nullable field Like.user.
+[2025-06-10T20:54:31.319Z] ERROR: GraphQL Error: Cannot return null for non-nullable field Like.user.
+[2025-06-10T21:01:10.257Z] ERROR: GraphQL Error: Field "removePost" must not have a selection since type "Boolean!" has no subfields.
+[2025-06-10T21:03:09.197Z] INFO: User logged in: bob
+[2025-06-10T21:03:22.957Z] ERROR: GraphQL Error: Field "removePost" must not have a selection since type "Boolean!" has no subfields.
+[2025-06-10T21:03:34.242Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T21:03:37.252Z] ERROR: GraphQL Error: Field "removePost" must not have a selection since type "Boolean!" has no subfields.
+[2025-06-10T21:05:50.262Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.delete()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:122:31
+
+  119 },
+  120 removePost: async (_: any, { id }: any, { prisma, user }: Context) => {
+  121   if (!user || user.role !== 'ADMIN') throw new Error('Not authorized');
+→ 122   await prisma.post.delete(
+Foreign key constraint violated: `Comment_postId_fkey (index)`
+[2025-06-10T21:06:34.524Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.delete()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:122:31
+
+  119 },
+  120 removePost: async (_: any, { id }: any, { prisma, user }: Context) => {
+  121   if (!user || user.role !== 'ADMIN') throw new Error('Not authorized');
+→ 122   await prisma.post.delete(
+Foreign key constraint violated: `Comment_postId_fkey (index)`
+[2025-06-10T21:08:24.945Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T21:08:28.729Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.delete()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:123:31
+
+  120 removePost: async (_: any, { id }: any, { prisma, user }: Context) => {
+  121   if (!user || user.role !== 'ADMIN') throw new Error('Not authorized');
+  122   console.log("id:", id)
+→ 123   await prisma.post.delete(
+Foreign key constraint violated: `Comment_postId_fkey (index)`
+[2025-06-10T21:09:15.731Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T21:09:18.839Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.delete()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:124:31
+
+  121 if (!user || user.role !== 'ADMIN') throw new Error('Not authorized');
+  122 console.log("id:", id)
+  123 console.log("post:", prisma.post.findUnique({ where: { id } }))
+→ 124 await prisma.post.delete(
+Foreign key constraint violated: `Comment_postId_fkey (index)`
+[2025-06-10T21:09:57.358Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T21:09:59.536Z] ERROR: GraphQL Error: 
+Invalid `prisma.post.delete()` invocation in
+C:\Users\jovcl\OneDrive\Desktop\test apps\test\src\graphql\resolvers.ts:124:31
+
+  121 if (!user || user.role !== 'ADMIN') throw new Error('Not authorized');
+  122 console.log("id:", id)
+  123 console.log("post:", prisma.post.findFirst({ where: { id } }))
+→ 124 await prisma.post.delete(
+Foreign key constraint violated: `Comment_postId_fkey (index)`
+[2025-06-10T21:13:12.543Z] INFO: 🚀 Server ready at http://localhost:4000/
+[2025-06-10T21:13:19.178Z] INFO: Post removed by admin: b6ee2fcb-8a8c-4502-9457-5643fcbc46d9
